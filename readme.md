@@ -28,7 +28,17 @@ mcp-tfl-journey/
 - Provide comprehensive journey summaries
 - Clean, modular, and maintainable code structure
 
-## Setup
+## Installation & Usage
+
+### Option 1: Using npx (Recommended)
+
+Run directly without installation:
+
+```bash
+npx mcp-tfl-journey
+```
+
+### Option 2: Local Installation
 
 1. Install dependencies:
    ```bash
@@ -42,14 +52,46 @@ mcp-tfl-journey/
 
 3. Run the server:
    ```bash
+   npm start
+   # or
    node index.js
    ```
+
+## Configuration
+
+Set your TfL API key as an environment variable:
+
+```bash
+export TFL_API_KEY="your-api-key-here"
+```
+
+You can get a free API key from [TfL Developer Portal](https://api.tfl.gov.uk/).
 
 ## Usage
 
 The server provides a `search_journey` tool that accepts:
 - `from`: Source station code (e.g., "9400ZZLUKSX")
 - `to`: Destination station code (e.g., "9400ZZLULVT")
+
+## Publishing to npm
+
+To publish this package to npm:
+
+1. Update the repository URL in `package.json` with your actual GitHub repository
+2. Login to npm:
+   ```bash
+   npm login
+   ```
+
+3. Publish the package:
+   ```bash
+   npm publish
+   ```
+
+4. After publishing, users can run:
+   ```bash
+   npx mcp-tfl-journey
+   ```
 
 ## Code Quality
 
@@ -58,10 +100,6 @@ This project follows clean code principles:
 - **Modularity**: Functions are organized by their domain and responsibility
 - **Readability**: Clear naming and documentation
 - **Maintainability**: Easy to test, modify, and extend individual components
-
-## Configuration
-
-The TfL API key is configured in the code. To use your own API key, modify the `TFL_API_KEY` constant in the `index.js` file.
 
 ## API Endpoint
 

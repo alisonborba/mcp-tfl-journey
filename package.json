@@ -3,20 +3,37 @@
   "version": "1.0.0",
   "description": "MCP server for TfL Journey API",
   "main": "index.js",
+  "bin": {
+    "mcp-tfl-journey": "./index.js"
+  },
   "scripts": {
     "start": "node index.js",
     "test": "node test.js",
-    "test:api": "node test.js"
+    "test:api": "node test.js",
+    "test:npx": "node test-npx.js"
   },
   "keywords": [
     "mcp",
     "tfl",
     "journey",
-    "transport"
+    "transport",
+    "london",
+    "public-transport"
   ],
   "author": "",
   "license": "ISC",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alisonborba/mcp-tfl-journey.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alisonborba/mcp-tfl-journey/issues"
+  },
+  "homepage": "https://github.com/alisonborba/mcp-tfl-journey#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^0.4.0",
     "axios": "^1.6.0"
