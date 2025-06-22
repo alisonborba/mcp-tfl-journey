@@ -1,75 +1,63 @@
 # TfL Journey MCP Server
 
-🚇 **MCP Server for Transport for London Journey API** - A Model Context Protocol server that enables AI models to access real-time journey information, alerts, and disruptions from London's transport network.
+A Model Context Protocol (MCP) server that provides journey information from Transport for London (TfL) API.
 
-[![MCP](https://img.shields.io/badge/MCP-Protocol-blue)](https://modelcontextprotocol.io/)
-[![Node.js](https://img.shields.io/badge/Node.js-ES%20Modules-green)](https://nodejs.org/)
-[![License](https://img.shields.io/badge/License-ISC-yellow)](LICENSE)
+## Project Structure
 
-A simple MCP (Model Context Protocol) server that accesses the Transport for London (TfL) API to search for journey information between stations.
+The project is organized into modular files following clean code principles:
+
+```
+mcp-tfl-journey/
+├── index.js          # Main MCP server configuration and entry point
+├── tfl-api.js        # TfL API communication and data fetching
+├── helpers.js        # Utility functions for data extraction and processing
+├── package.json      # Dependencies and project configuration
+└── README.md         # This file
+```
+
+### File Responsibilities
+
+- **`index.js`**: MCP server setup, tool definitions, and request handlers
+- **`tfl-api.js`**: API communication with TfL, data fetching, and response formatting
+- **`helpers.js`**: Pure utility functions for extracting and processing journey data
 
 ## Features
 
-- Search for journey information between two TfL stations
-- Focuses on extracting information about:
-  - **Alerts**: Alerts and warnings about the journey
-  - **StopPoints**: Journey stop points
-  - **Disruptions**: Service disruptions and issues
+- Search for journey information between TfL stations
+- Extract alerts, disruptions, and stop points from journey data
+- Provide comprehensive journey summaries
+- Clean, modular, and maintainable code structure
 
-## Installation
+## Setup
 
 1. Install dependencies:
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
 
-2. Run the server:
-```bash
-npm start
-```
+2. Set your TfL API key as an environment variable:
+   ```bash
+   export TFL_API_KEY="your-api-key-here"
+   ```
+
+3. Run the server:
+   ```bash
+   node index.js
+   ```
 
 ## Usage
 
-The server exposes a tool called `search_journey` that accepts the following parameters:
+The server provides a `search_journey` tool that accepts:
+- `from`: Source station code (e.g., "9400ZZLUKSX")
+- `to`: Destination station code (e.g., "9400ZZLULVT")
 
-- `from`: Origin station code (e.g., `9400ZZLUKSX`)
-- `to`: Destination station code (e.g., `9400ZZLULVT`)
+## Code Quality
 
-### Usage example
-
-```json
-{
-  "name": "search_journey",
-  "arguments": {
-    "from": "9400ZZLUKSX",
-    "to": "9400ZZLULVT"
-  }
-}
-```
-
-### Response
-
-The server returns a JSON object with the following information:
-
-```json
-{
-  "journeyFound": true,
-  "from": "9400ZZLUKSX",
-  "to": "9400ZZLULVT",
-  "alerts": [...],
-  "stopPoints": [...],
-  "disruptions": [...],
-  "summary": {
-    "totalJourneys": 1,
-    "totalAlerts": 0,
-    "totalDisruptions": 0,
-    "totalStopPoints": 5,
-    "duration": 15,
-    "startDateTime": "2024-01-01T10:00:00Z",
-    "arrivalDateTime": "2024-01-01T10:15:00Z"
-  }
-}
-```
+This project follows clean code principles:
+- **Single Responsibility**: Each file has a clear, focused purpose
+- **Modularity**: Functions are organized by their domain and responsibility
+- **Readability**: Clear naming and documentation
+- **Maintainability**: Easy to test, modify, and extend individual components
 
 ## Configuration
 
