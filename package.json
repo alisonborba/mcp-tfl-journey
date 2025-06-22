@@ -8,9 +8,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "node test.js",
-    "test:api": "node test.js",
-    "test:npx": "node test-npx.js"
+    "test": "node test.js"
   },
   "keywords": [
     "mcp",
