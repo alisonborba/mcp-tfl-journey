@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/alisonborba-mcp-tfl-journey-badge.png)](https://mseep.ai/app/alisonborba-mcp-tfl-journey)
+
 # TFL Journey MCP Server
 
 🚇 A Model Context Protocol (MCP) server for Transport for London journey data. Get real-time routes, alerts, and disruptions via AI assistants like Claude.
